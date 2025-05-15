@@ -1,1 +1,150 @@
 
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Проект ECOllapse</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+    }
+    header {
+      background: #2e8b57;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #444;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+    }
+    nav a:hover {
+      background: #666;
+    }
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      background: white;
+      display: none;
+    }
+    section.active {
+      display: block;
+    }
+    img, video {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 10px 0;
+    }
+    h2 {
+      color: #2e8b57;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Проект ECOllapse</h1>
+    <p>Разработка компьютерной игры с процедурной генерацией и элементами выживания</p>
+  </header>
+
+  <nav>
+    <a href="#" onclick="showSection('about')">О проекте</a>
+    <a href="#" onclick="showSection('team')">Участники</a>
+    <a href="#" onclick="showSection('journal')">Журнал</a>
+    <a href="#" onclick="showSection('resources')">Ресурсы</a>
+  </nav>
+
+  <section id="about" class="active">
+    <h2>О проекте</h2>
+    <p><strong>ECOllapse</strong> — это инновационная одиночная игра, сочетающая в себе элементы выживания, процедурную генерацию мира и симуляцию экосистем. Основное внимание уделено эволюции персонажа и реагирующей на игрока среде. Игрок оказывается в нестабильной биосфере и должен адаптироваться, развивать своего персонажа и выживать в уникальных условиях каждого нового мира.</p>
+    <p>Проект разработан студентами направления 09.03.02 «Информационные системы и технологии» под руководством Морозовой Ольги Ивановны.</p>
+
+    <!-- Арт-скриншоты -->
+    <img src="images/ECOllapse1sc.jpg" alt="Арт 1" />
+    <img src="images/ECOllapse2sc.jpg" alt="Арт 2" />
+    <img src="images/Desktop - 1.png" alt="Скриншот меню" />
+
+    <!-- Видео-презентация -->
+    <video controls>
+  <source src="images/Ecollapse_vid.mp4" type="video/mp4">
+  Ваш браузер не поддерживает воспроизведение видео.
+</video>
+
+  <section id="team">
+    <h2>Участники</h2>
+    <ul>
+      <li>Горбачев Илья Вячеславович</li>
+      <li>Павлов Вячеслав Станиславович</li>
+      <li>Тарнава Максим</li>
+      <li>Зайцев Владислав</li>
+      <li>Рябов Михаил</li>
+      <li>Кривоносова Варвара</li>
+      <li>Пак Диана</li>
+      <li>Клевин Александр</li>
+      <li>Бычков Василий</li>
+      <li>Козак Юлия</li>
+      <li>Петухов Максим</li>
+      <li>Ткачев Дмитрий</li>
+      <li>Савин Даниил</li>
+      <li>Извекова Диана</li>
+      <li>Буренков Олег</li>
+      <li>Борисенко Даниил</li>
+      <li>Носова Дарья</li>
+      <li>Щеглов Семён</li>
+      <li>Комар Ярослава</li>
+      <li>Брюхов Светослав</li>
+      <li>Кочетков Юрий</li>
+      <li>Грачев Павел</li>
+    </ul>
+  </section>
+
+  <section id="journal">
+    <h2>Журнал</h2>
+    <article>
+      <h3>01. Начало разработки</h3>
+      <p>Идея проекта возникла в ходе анализа современных survival-игр. Было принято решение создать игру с глубокой симуляцией экосистем и процедурной генерацией мира.</p>
+    </article>
+    <article>
+      <h3>02. Технологическое проектирование</h3>
+      <p>Разработан стек технологий: Unity + C#, система генерации на основе Perlin Noise, алгоритмы поведения существ, скрипты мутаций и интерфейс.</p>
+    </article>
+    <article>
+      <h3>03. Тестирование прототипа</h3>
+      <p>Создан базовый прототип с механикой выживания и эволюции. Проведены первые пользовательские тесты и собран фидбэк для дальнейшей работы.</p>
+    </article>
+  </section>
+
+  <section id="resources">
+    <h2>Ресурсы</h2>
+    <ul>
+      <li><a href="https://gohugo.io">Официальная документация Hugo</a></li>
+      <li><a href="https://unity.com">Платформа Unity</a></li>
+      <li><a href="https://docs.unity3d.com">Документация Unity</a></li>
+      <li><a href="https://perlin-noise.io">Алгоритмы Perlin Noise</a></li>
+      <li><a href="https://gamedevacademy.org">GameDev ресурсы и обучение</a></li>
+    </ul>
+  </section>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
+
